@@ -25,7 +25,7 @@ Do not introduce additional product features without explicit approval.
 - **UI:** React
 - **Styling:** Tailwind CSS
 - **Components:** shadcn/ui
-- **Database:** PostgreSQL
+- **Database:** SQLite (local file)
 - **ORM:** Prisma
 - **Validation:** Zod
 - **Forms:** React Hook Form
@@ -82,7 +82,7 @@ Optimize for code that another developer can understand, navigate, and modify qu
 
 Choose state management based on the type and ownership of state.
 
-- **Persistent data:** PostgreSQL is the source of truth.
+- **Persistent data:** The local SQLite file is the source of truth.
 - **Server state:** Prefer Next.js server-side data fetching and built-in revalidation mechanisms where appropriate.
 - **Local UI state:** Use React state.
 - **Form state:** Use React Hook Form.
@@ -149,6 +149,7 @@ Use Test-Driven Development (RED → GREEN → REFACTOR) for new business logic.
 - Validate untrusted input at server boundaries.
 - Use appropriate database constraints and transactions.
 - Store nutritional values with a deliberate precision and rounding strategy.
+- Store Food nutrition per 100 g as integer tenths in SQLite. Keep calculations exact and round only for display.
 - Preserve historical nutritional values when foods are edited or deleted.
 - Handle dates and time zones consistently.
 - Use database migrations for schema changes.

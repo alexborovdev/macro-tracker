@@ -20,5 +20,17 @@ coverage/
 .env.*
 !.env.example
 
+# Local and test databases
+/prisma/data/
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+
+# Generated Prisma Client
+/src/generated/prisma/
+
 # Logs
 *.log
