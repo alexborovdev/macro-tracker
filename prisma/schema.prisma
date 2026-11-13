@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Food {
+  id              String   @id @default(uuid())
+  name            String
+  /// Tenths of a kilocalorie per 100 g.
+  caloriesPer100g Int
+  /// Tenths of a gram per 100 g.
+  proteinPer100g  Int
+  /// Tenths of a gram per 100 g.
+  fatPer100g      Int
+  /// Tenths of a gram per 100 g.
+  carbsPer100g    Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
